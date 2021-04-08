@@ -1,0 +1,22 @@
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TextArea?>
+<DialogPane fx:controller="sample.menuController" xmlns:fx="http://javafx.com/fxml">
+    <headerText>
+        Insert memo field's
+    </headerText>
+    <content>
+        <GridPane vgap="10" hgap="10">
+            <Label text="Tiitel: " GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <TextField fx:id="titelField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+            <Label text="Kuupaev: " GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <TextField fx:id="dateField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+            <Label text="Sisu: " GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <TextArea fx:id="contentField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+        </GridPane>
+    </content>
+</DialogPane>
