@@ -4,9 +4,9 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class Memo {
 
-    private SimpleStringProperty tiitel;
-    private SimpleStringProperty kuupaev;
-    private SimpleStringProperty sisu;
+    private SimpleStringProperty tiitel = new SimpleStringProperty("");
+    private SimpleStringProperty kuupaev = new SimpleStringProperty("");
+    private SimpleStringProperty sisu = new SimpleStringProperty("");
 
     public Memo(){
 
