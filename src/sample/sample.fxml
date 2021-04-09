@@ -16,6 +16,7 @@
             <menus>
                 <Menu text="menu">
                     <items>
+                        <MenuItem text="Read" onAction="#showReadMemo"/>
                         <MenuItem text="Add" onAction="#showAddMemo"/>
                         <MenuItem text="Edit" onAction="#showEditMemo"/>
                         <MenuItem text="Delete" onAction="#showDeleteMemo"/>

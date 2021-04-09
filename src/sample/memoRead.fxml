@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<DialogPane fx:controller="sample.memoRead" xmlns:fx="http://javafx.com/fxml" prefHeight="300" prefWidth="300">
+    <content>
+        <VBox>
+            <Label fx:id="labelTitle" xmlns:fx="http://javafx.com/fxml" text="Title Welcome"/>
+            <Label fx:id="labelDate" xmlns:fx="http://javafx.com/fxml" text="Date 02/04/2021"/>
+            <Label fx:id="labelContent" xmlns:fx="http://javafx.com/fxml" text="Content Test"/>
+        </VBox>
+    </content>
+</DialogPane>

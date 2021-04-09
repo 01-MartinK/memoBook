@@ -117,4 +117,39 @@ public class Controller {
             data.saveMemos();
         }
     }
+
+    public void showReadMemo(ActionEvent actionEvent) {
+        Memo selectedMemo = memoTables.getSelectionModel().getSelectedItem();
+        if (selectedMemo == null){
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("No memo selected!");
+            alert.setHeaderText(null);
+            alert.setContentText("I need you to select a memo before reading!");
+            alert.showAndWait();
+            return;
+        }
+
+        Dialog<ButtonType> dialog = new Dialog<ButtonType>();
+        dialog.initOwner(mainPanel.getScene().getWindow());
+        dialog.setTitle("Read Memo");
+        FXMLLoader fxmlLoader = new FXMLLoader();
+        fxmlLoader.setLocation(getClass().getResource("memoRead.fxml"));
+        try {
+            dialog.getDialogPane().setContent(fxmlLoader.load());
+        }catch (IOException e){
+            System.out.println("Couldn't load the dialog");
+            e.printStackTrace();
+            return;
+        }
+
+        dialog.getDialogPane().getButtonTypes().add(ButtonType.CLOSE);
+
+        memoRead memoRead = fxmlLoader.getController();
+        memoRead.showMemo(selectedMemo);
+
+        Optional<ButtonType> result = dialog.showAndWait();
+        if(result.isPresent() && result.get() == ButtonType.OK){
+            data.saveMemos();
+        }
+    }
 }
