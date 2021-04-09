@@ -71,7 +71,7 @@ public class Controller {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Delete Memo");
         alert.setHeaderText(null);
-        alert.setContentText("Are you sure you want to delete the selected memo "+ selectedMemo.getKuupaev()+ " " + selectedMemo.getTiitel());
+        alert.setContentText("Are you sure you want to delete the selected memo "+ selectedMemo.getKuupaev()+ " with the title of " + selectedMemo.getTiitel());
 
         Optional<ButtonType> result = alert.showAndWait();
         if(result.isPresent() && result.get() == ButtonType.OK){

@@ -21,7 +21,7 @@ public class memoRead {
     private Label labelContent;
 
     public void showMemo(Memo selectedMemo){
-
+        // Spaghetti code
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate date = LocalDate.parse(selectedMemo.getKuupaev(), formatter);
 
