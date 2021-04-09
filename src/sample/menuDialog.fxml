@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.DatePicker?>
 <DialogPane fx:controller="sample.menuController" xmlns:fx="http://javafx.com/fxml">
     <headerText>
         Insert memo field's
@@ -13,7 +14,7 @@
             <TextField fx:id="titelField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
 
             <Label text="Kuupaev: " GridPane.rowIndex="1" GridPane.columnIndex="0"/>
-            <TextField fx:id="dateField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+            <DatePicker fx:id="datePicker" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
 
             <Label text="Sisu: " GridPane.rowIndex="2" GridPane.columnIndex="0"/>
             <TextArea fx:id="contentField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
