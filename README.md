@@ -1,5 +1,9 @@
 # memoBook
 
+## What is it!
+It's a small test application for memo keeping that I developed for a school project. 
+
+
 ## Installing
 First you should have got java11. I use the branch called amazon correto from here https://docs.aws.amazon.com/corretto/latest/corretto-11-ug/downloads-list.html. You also need
 to have javafx installed from here https://openjfx.io/.
@@ -7,9 +11,6 @@ to have javafx installed from here https://openjfx.io/.
 Second you should have an java editing software like eclipse or IntellJ Idea.
 
 You should have set up javafx in the project run options.
-
-## What is it!
-It's a small test application for memo keeping that I developed for a school project. 
 
 ## Features
 Features that it has got:
