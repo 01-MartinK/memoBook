@@ -10,7 +10,10 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
+// A class for reading a memo
 public class memoRead {
+
+    // fxml references
     @FXML
     private Label labelDate;
 
@@ -21,13 +24,14 @@ public class memoRead {
     private Label labelContent;
 
     public void showMemo(Memo selectedMemo){
-        // Spaghetti code
+        // Spaghetti code for date modification
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         LocalDate date = LocalDate.parse(selectedMemo.getKuupaev(), formatter);
 
         DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("dd MMMM yyyy");
         String strDate = date.format(formatter2);
 
+        // setting the values of the text into the correct form
         labelDate.setText(strDate);
         labelTitle.setText(selectedMemo.getTiitel());
         labelContent.setText(selectedMemo.getSisu());

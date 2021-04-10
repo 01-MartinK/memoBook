@@ -1,3 +1,5 @@
+<!-- A memo editing and adding dialog pane-->
+
 <?import javafx.scene.control.DialogPane?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.control.Label?>

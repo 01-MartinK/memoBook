@@ -22,39 +22,47 @@ import java.io.InputStream;
 
 
 public class MemoData {
+
+    // memoData
     private static final String MEMOS_FILE = "memos.xml";
-    private static String LOCAL_MEMOS_FILE = "C:\\Users\\MK\\Desktop\\test.xml";
+    private static String LOCAL_MEMOS_FILE = "memos.xml";
 
     private static final String MEMO = "memo";
     private static final String DATE = "kuupaev";
     private static final String TIITEL = "tiitel";
     private static final String SISU = "sisu";
 
+    // list for storing memos
     private ObservableList<Memo> memos;
 
-
+    // memo data starter method
     public MemoData() {
         memos = FXCollections.observableArrayList();
     }
 
+    // get the memos from the memo list
     public ObservableList<Memo> getContacts(){
         return memos;
     }
 
+    // add a memo to the memo list
     public void addMemo(Memo item){
         memos.add(item);
     }
 
+    // delete a memo from the memo list
     public void deleteMemo(Memo item){
         memos.remove(item);
     }
 
+    // delete the values from the memo list
     public void deleteMemos(){
         for (int i = 0;i <= memos.size()+1;i++){
             memos.remove(0);
         }
     }
 
+    // load the memos from the local memo path
     public void loadMemos() {
         try {
             // First, create a new XMLInputFactory
@@ -116,6 +124,7 @@ public class MemoData {
         }
     }
 
+    // save the memos to the local memo path
     public void saveMemos() {
 
         try {
@@ -156,6 +165,7 @@ public class MemoData {
         }
     }
 
+    // save a memo to the file
     private void saveMemo(XMLEventWriter eventWriter, XMLEventFactory eventFactory, Memo memo)
             throws FileNotFoundException, XMLStreamException {
 
@@ -175,6 +185,7 @@ public class MemoData {
         eventWriter.add(end);
     }
 
+    // create a note for the file
     private void createNode(XMLEventWriter eventWriter, String name,
                             String value) throws XMLStreamException {
 
@@ -194,6 +205,7 @@ public class MemoData {
         eventWriter.add(end);
     }
 
+    // set the local memo path to the string
     public static void setLocalMemosFile(String localMemosFile) {
         LOCAL_MEMOS_FILE = localMemosFile;
     }

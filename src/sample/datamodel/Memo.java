@@ -4,19 +4,24 @@ import javafx.beans.property.SimpleStringProperty;
 
 public class Memo {
 
+    // string properties for memo data
     private SimpleStringProperty tiitel = new SimpleStringProperty("");
     private SimpleStringProperty kuupaev = new SimpleStringProperty("");
     private SimpleStringProperty sisu = new SimpleStringProperty("");
 
+    // empty memo starter method
     public Memo(){
 
     }
 
+    // memo starter method with primary values
     public Memo(String tiitel, String kuupaev, String sisu){
         this.kuupaev.set(kuupaev);
         this.tiitel.set(tiitel);
         this.sisu.set(sisu);
     }
+
+    // value getter and setters
 
     public String getTiitel() {
         return tiitel.get();
@@ -54,6 +59,7 @@ public class Memo {
         this.sisu.set(sisu);
     }
 
+    // toString method overriding for convenience
     @Override
     public String toString() {
         return "Contact{" +

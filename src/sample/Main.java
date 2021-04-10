@@ -1,3 +1,18 @@
+/*
+# A simple memo system for memo editing.
+#
+# What has it got:
+#   * editing
+#   * deletion
+#   * reading
+#   * saving and loading
+#
+# School assignment.
+#
+#   Author: MK
+#
+*/
+
 package sample;
 
 import javafx.application.Application;
@@ -10,6 +25,7 @@ public class Main extends Application {
 
     public static Stage stage;
 
+    // starts the main window and main fxml file
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
@@ -18,6 +34,7 @@ public class Main extends Application {
         primaryStage.show();
     }
 
+    // tells to start the main window
     public static void main(String[] args) {
         launch(args);
     }
