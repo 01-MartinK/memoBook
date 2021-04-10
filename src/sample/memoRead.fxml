@@ -13,8 +13,10 @@
     <content>
         <VBox>
             <Label fx:id="labelTitle" xmlns:fx="http://javafx.com/fxml" text="Title Welcome"/>
+            <Label text=""/>
             <Label fx:id="labelDate" xmlns:fx="http://javafx.com/fxml" text="Date 02/04/2021"/>
-            <Label fx:id="labelContent" xmlns:fx="http://javafx.com/fxml" text="Content Test"/>
+            <Label text=""/>
+            <Label fx:id="labelContent" xmlns:fx="http://javafx.com/fxml" text="Content Test" wrapText="true"/>
         </VBox>
     </content>
 </DialogPane>

@@ -17,7 +17,7 @@
             <DatePicker fx:id="datePicker" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
 
             <Label text="Sisu: " GridPane.rowIndex="2" GridPane.columnIndex="0"/>
-            <TextArea fx:id="contentField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+            <TextArea fx:id="contentField" GridPane.rowIndex="2" GridPane.columnIndex="1" wrapText="true"/>
         </GridPane>
     </content>
 </DialogPane>
