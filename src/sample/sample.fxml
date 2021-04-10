@@ -30,6 +30,8 @@
             <Button text="Add" onAction="#showAddMemo"/>
             <Button text="Edit" onAction="#showEditMemo"/>
             <Button text="Delete" onAction="#showDeleteMemo"/>
+            <Button text="Save" onAction="#showSaveMemo"/>
+            <Button text="Load" onAction="#showLoadMemo"/>
         </HBox>
     </bottom>
 

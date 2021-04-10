@@ -8,9 +8,14 @@ import javafx.scene.control.ButtonType;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
+import javafx.stage.Window;
 import sample.datamodel.Memo;
 import sample.datamodel.MemoData;
 
+import java.awt.*;
+import java.io.File;
 import java.io.IOException;
 import java.util.Optional;
 
@@ -151,5 +156,28 @@ public class Controller {
         if(result.isPresent() && result.get() == ButtonType.OK){
             data.saveMemos();
         }
+    }
+
+    public void showSaveMemo(ActionEvent actionEvent) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Save Resource File");
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Memo Files .xml", "*.xml"));
+        File selectedFile = fileChooser.showSaveDialog(new Stage());
+
+        //System.out.println(selectedFile.toString());
+        data.setLocalMemosFile(selectedFile.toString());
+        data.saveMemos();
+    }
+
+    public void showLoadMemo(ActionEvent actionEvent) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Resource File");
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Memo Files .xml", "*.xml"));
+        File selectedFile = fileChooser.showOpenDialog(new Stage());
+
+        //System.out.println(selectedFile.toString());
+        data.setLocalMemosFile(selectedFile.toString());
+        data.deleteMemos();
+        data.loadMemos();
     }
 }

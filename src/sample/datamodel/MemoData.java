@@ -23,6 +23,7 @@ import java.io.InputStream;
 
 public class MemoData {
     private static final String MEMOS_FILE = "memos.xml";
+    private static String LOCAL_MEMOS_FILE = "C:\\Users\\MK\\Desktop\\test.xml";
 
     private static final String MEMO = "memo";
     private static final String DATE = "kuupaev";
@@ -48,12 +49,18 @@ public class MemoData {
         memos.remove(item);
     }
 
+    public void deleteMemos(){
+        for (int i = 0;i <= memos.size()+1;i++){
+            memos.remove(0);
+        }
+    }
+
     public void loadMemos() {
         try {
             // First, create a new XMLInputFactory
             XMLInputFactory inputFactory = XMLInputFactory.newInstance();
             // Setup a new eventReader
-            InputStream in = new FileInputStream(MEMOS_FILE);
+            InputStream in = new FileInputStream(LOCAL_MEMOS_FILE);
             XMLEventReader eventReader = inputFactory.createXMLEventReader(in);
             // read the XML document
             Memo memo = null;
@@ -116,7 +123,7 @@ public class MemoData {
             XMLOutputFactory outputFactory = XMLOutputFactory.newInstance();
             // create XMLEventWriter
             XMLEventWriter eventWriter = outputFactory
-                    .createXMLEventWriter(new FileOutputStream(MEMOS_FILE));
+                    .createXMLEventWriter(new FileOutputStream(LOCAL_MEMOS_FILE));
             // create an EventFactory
             XMLEventFactory eventFactory = XMLEventFactory.newInstance();
             XMLEvent end = eventFactory.createDTD("\n");
@@ -131,7 +138,7 @@ public class MemoData {
             eventWriter.add(end);
 
             for (Memo memo: memos) {
-                saveMemos(eventWriter, eventFactory, memo);
+                saveMemo(eventWriter, eventFactory, memo);
             }
 
             eventWriter.add(eventFactory.createEndElement("", "", "memos"));
@@ -149,7 +156,7 @@ public class MemoData {
         }
     }
 
-    private void saveMemos(XMLEventWriter eventWriter, XMLEventFactory eventFactory, Memo memo)
+    private void saveMemo(XMLEventWriter eventWriter, XMLEventFactory eventFactory, Memo memo)
             throws FileNotFoundException, XMLStreamException {
 
         XMLEvent end = eventFactory.createDTD("\n");
@@ -187,5 +194,7 @@ public class MemoData {
         eventWriter.add(end);
     }
 
-
+    public static void setLocalMemosFile(String localMemosFile) {
+        LOCAL_MEMOS_FILE = localMemosFile;
+    }
 }
